@@ -16,7 +16,11 @@
             <artifactId>movie_online_infrastructure</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.eddie</groupId>
+            <artifactId>movie_online_common</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
     </dependencies>
-
 
 </project>
