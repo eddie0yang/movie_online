@@ -16,13 +16,16 @@ public class UserInfoServiceImpl implements UserInfoService {
 
     @Override
     public void queryInfo() {
+        //mybatis
         List<UserInfoPO> userInfoPOS = userInfoMapper.queryInfo();
-        for (UserInfoPO userInfoPO : userInfoPOS) {
-            System.out.println(userInfoPO);
-        }
+        System.out.println("1"+userInfoPOS.toString());
 
+        //mybatis plus
+        UserInfoPO userInfoPO = userInfoMapper.selectById(1);
+        System.out.println("2"+userInfoPO.toString());
 
-
-
+        //mybatis plus + lambda
+        List<UserInfoPO> userInfoPOS1 = userInfoMapper.queryInfoByMyself(1);
+        System.out.println("3"+userInfoPOS1);
     }
 }

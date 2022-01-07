@@ -1,4 +1,4 @@
-package com.eddie.movie_online_bootstrap.config;
+package com.eddie.movie_online_common.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
