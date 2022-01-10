@@ -8,6 +8,9 @@
 3.swagger
 4.mybatisPlus+lambda
 
+本地部署√
+linux部署√
+docker部署
 
 
 spring security
@@ -18,9 +21,7 @@ zk
 apollo
 spring cloud
 
-本地部署√
-部署容器
-部署docker
+
 
 
 
