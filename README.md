@@ -10,9 +10,29 @@
 
 本地部署√
 linux部署√
-docker部署
+docker部署√
+    服务器执行：
+    1.vim Dockerfile
+    FROM java:8
+    ADD movie_online_bootstrap-0.0.1-SNAPSHOT.jar /movie_online.jar
+    ENTRYPOINT ["java","-jar","movie_online.jar","--spring.profiles.active=stg"]
+    2.docker build -f Dockerfile -t movieonlineimage .
+    3.docker run -d -p 8080:8888 movieonlineimage
+查docker进程：docker ps
+查docker容器日志：
+    docker logs [OPTIONS] CONTAINER（容器id）
+      Options:
+            --details        显示更多的信息
+        -f, --follow         跟踪实时日志
+            --since string   显示自某个timestamp之后的日志，或相对时间，如42m（即42分钟）
+            --tail string    从日志末尾显示多少行日志， 默认是all
+        -t, --timestamps     显示时间戳
+            --until string   显示自某个timestamp之前的日志，或相对时间，如42m（即42分钟）
+
+idea一键docker
 
 
+log
 spring security
 vue
 redis
