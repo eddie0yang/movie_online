@@ -20,19 +20,10 @@ docker部署√
     3.docker run -d -p 8080:8888 movieonlineimage
 查docker进程：docker ps
 查docker容器日志：
-    docker logs [OPTIONS] CONTAINER（容器id）
-      Options:
-            --details        显示更多的信息
-        -f, --follow         跟踪实时日志
-            --since string   显示自某个timestamp之后的日志，或相对时间，如42m（即42分钟）
-            --tail string    从日志末尾显示多少行日志， 默认是all
-        -t, --timestamps     显示时间戳
-            --until string   显示自某个timestamp之前的日志，或相对时间，如42m（即42分钟）
-
-idea一键docker
+idea一键docker√
 
 
-log
+
 spring security
 vue
 redis
@@ -40,10 +31,7 @@ mq
 zk
 apollo
 spring cloud
-
-
-
-
+log
 
 
 
@@ -65,4 +53,4 @@ A1:api可用于打包给外部直接引用
 A2:使用Maven的多模块配置，可以帮助项目划分模块，鼓励重用，防止POM变得过于庞大，方便某个模块的构建，而不用每次都构建整个项目，并且使得针对某个模块的特殊控制更为方便
 
 
-Q2：本地部署，局域网外无法访问；部署到linux系统呢？
+Q2：本地部署，局域网外无法访问；部署到linux系统呢？也是无法访问。
