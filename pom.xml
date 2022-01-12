@@ -12,8 +12,6 @@
         <module>movie_online_infrastructure</module>
         <module>movie_online_manager</module>
         <module>movie_online_test</module>
-        <module>movie_online_demo</module>
-        <module>movie_online_test</module>
     </modules>
 
     <parent>
@@ -116,6 +114,11 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
+        </dependency>
+        <!--redis依赖配置-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
     </dependencies>
 

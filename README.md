@@ -22,7 +22,8 @@ docker部署√
 查docker容器日志：
 idea一键docker√
 
-入口：登录页面 - Oauth2 + SSO
+入口：登录页面 - Oauth2 + SSO,考虑到每次请求都需要令牌，太繁琐，换Spring Security吧
+Spring Security + JWT
 
 
 spring cloud 全家桶
