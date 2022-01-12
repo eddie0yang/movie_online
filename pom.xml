@@ -11,6 +11,9 @@
         <module>movie_online_common</module>
         <module>movie_online_infrastructure</module>
         <module>movie_online_manager</module>
+        <module>movie_online_test</module>
+        <module>movie_online_demo</module>
+        <module>movie_online_test</module>
     </modules>
 
     <parent>

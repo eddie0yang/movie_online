@@ -22,15 +22,17 @@ docker部署√
 查docker容器日志：
 idea一键docker√
 
+入口：登录页面 - Oauth2 + SSO
 
 
-spring security
-vue
+spring cloud 全家桶
+
 redis
 mq
 zk
 apollo
-spring cloud
+
+vue
 log
 
 
