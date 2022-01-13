@@ -3,11 +3,11 @@
 2.在线观看电影
 
 技术点：
-1.springboot+maven多模块
-2.git
-3.swagger
-4.mybatisPlus+lambda
-
+1.Springboot+Maven多模块
+2.Git
+3.Swagger
+4.MybatisPlus+lambda
+5.Docker
 本地部署√
 linux部署√
 docker部署√
@@ -21,8 +21,8 @@ docker部署√
 查docker进程：docker ps
 查docker容器日志：
 idea一键docker√
-
-入口：登录页面 - Oauth2 + SSO,考虑到每次请求都需要令牌，太繁琐，换Spring Security吧
+6.Redis
+7.入口：登录页面 - Oauth2 + SSO,考虑到每次请求都需要令牌，太繁琐，换Spring Security
 Spring Security + JWT
 
 

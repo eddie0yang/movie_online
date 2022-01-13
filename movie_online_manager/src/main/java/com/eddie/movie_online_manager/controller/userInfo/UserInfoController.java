@@ -21,12 +21,13 @@ public class UserInfoController {
     @GetMapping(value = "/test")
     @ApiOperation("测试用例")
     public String test(){
-         userInfoService.queryInfo();
+        userInfoService.queryInfo();
 
 
-         redisService.set("abc","杨启文");
+        //redis测试
+        redisService.set("abc","杨启文");
         String abc = redisService.get("abc");
         System.out.println(abc);
-        return "123";
+        return "SUCCESS";
     }
 }

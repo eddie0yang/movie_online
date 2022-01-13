@@ -6,12 +6,16 @@ import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 import java.util.concurrent.TimeUnit;
 
+
 /**
  * redis操作Service的实现类
- * Created by macro on 2018/8/7.
+ *
+ * @author Eddie
+ * @date 2022/01/13
  */
 @Service
 public class RedisServiceImpl implements RedisService {
+
     @Autowired
     private StringRedisTemplate stringRedisTemplate;
 
