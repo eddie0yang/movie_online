@@ -2,12 +2,11 @@ package com.test.demo02_springsecurity.mapper;
 
 import com.test.demo02_springsecurity.model.UmsAdmin;
 import com.test.demo02_springsecurity.model.UmsAdminExample;
-import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
-@Mapper
+//@Mapper
 public interface UmsAdminMapper {
     long countByExample(UmsAdminExample example);
 

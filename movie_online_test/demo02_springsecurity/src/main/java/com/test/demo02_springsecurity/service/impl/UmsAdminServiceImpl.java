@@ -2,6 +2,7 @@ package com.test.demo02_springsecurity.service.impl;
 
 
 import com.test.demo02_springsecurity.dao.UmsAdminRoleRelationDao;
+import com.test.demo02_springsecurity.mapper.UmsAdminMapper;
 import com.test.demo02_springsecurity.model.UmsAdmin;
 import com.test.demo02_springsecurity.model.UmsAdminExample;
 import com.test.demo02_springsecurity.model.UmsPermission;
@@ -39,8 +40,8 @@ public class UmsAdminServiceImpl implements UmsAdminService {
     private PasswordEncoder passwordEncoder;
     @Value("${jwt.tokenHead}")
     private String tokenHead;
-//    @Autowired
-//    private UmsAdminMapper adminMapper;
+    @Autowired
+    private UmsAdminMapper adminMapper;
 
     @Autowired
     private UmsAdminRoleRelationDao adminRoleRelationDao;
@@ -49,10 +50,10 @@ public class UmsAdminServiceImpl implements UmsAdminService {
     public UmsAdmin getAdminByUsername(String username) {
         UmsAdminExample example = new UmsAdminExample();
         example.createCriteria().andUsernameEqualTo(username);
-//        List<UmsAdmin> adminList = adminMapper.selectByExample(example);
-//        if (adminList != null && adminList.size() > 0) {
-//            return adminList.get(0);
-//        }
+        List<UmsAdmin> adminList = adminMapper.selectByExample(example);
+        if (adminList != null && adminList.size() > 0) {
+            return adminList.get(0);
+        }
         return null;
     }
 
