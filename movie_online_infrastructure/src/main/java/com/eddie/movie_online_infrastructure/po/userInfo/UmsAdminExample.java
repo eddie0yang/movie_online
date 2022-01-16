@@ -1,4 +1,4 @@
-package com.test.demo02_springsecurity.model;
+package com.eddie.movie_online_infrastructure.po.userInfo;
 
 import java.util.ArrayList;
 import java.util.Date;

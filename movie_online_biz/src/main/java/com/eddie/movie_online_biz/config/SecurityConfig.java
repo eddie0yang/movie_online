@@ -1,13 +1,13 @@
-package com.test.demo02_springsecurity.config;
+package com.eddie.movie_online_biz.config;
 
 
-import com.test.demo02_springsecurity.filter.JwtAuthenticationTokenFilter;
-import com.test.demo02_springsecurity.handle.AdminUserDetails;
-import com.test.demo02_springsecurity.handle.RestAuthenticationEntryPoint;
-import com.test.demo02_springsecurity.handle.RestfulAccessDeniedHandler;
-import com.test.demo02_springsecurity.model.UmsAdmin;
-import com.test.demo02_springsecurity.model.UmsPermission;
-import com.test.demo02_springsecurity.service.UmsAdminService;
+import com.eddie.movie_online_biz.dto.userInfo.UmsAdminDTO;
+import com.eddie.movie_online_biz.dto.userInfo.UmsPermissionDTO;
+import com.eddie.movie_online_biz.handle.AdminUserDetails;
+import com.eddie.movie_online_biz.handle.RestAuthenticationEntryPoint;
+import com.eddie.movie_online_biz.handle.RestfulAccessDeniedHandler;
+import com.eddie.movie_online_biz.userInfo.service.UmsAdminService;
+import com.eddie.movie_online_common.filter.JwtAuthenticationTokenFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -31,12 +31,13 @@ import java.util.List;
 
 /**
  * SpringSecurity的配置
- * Created by macro on 2018/4/26.
+ * Created by eddie on 2022/01/16
  */
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled=true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
     @Autowired
     private UmsAdminService adminService;
     @Autowired
@@ -98,9 +99,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return new UserDetailsService() {
             @Override
             public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-                UmsAdmin admin = adminService.getAdminByUsername(username);
+                UmsAdminDTO admin = adminService.getAdminByUsername(username);
                 if (admin != null) {
-                    List<UmsPermission> permissionList = adminService.getPermissionList(admin.getId());
+                    List<UmsPermissionDTO> permissionList = adminService.getPermissionList(admin.getId());
                     return new AdminUserDetails(admin, permissionList);
                 }
                 throw new UsernameNotFoundException("用户名或密码错误");

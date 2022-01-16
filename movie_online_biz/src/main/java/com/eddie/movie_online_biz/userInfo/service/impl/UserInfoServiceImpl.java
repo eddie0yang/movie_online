@@ -2,7 +2,7 @@ package com.eddie.movie_online_biz.userInfo.service.impl;
 
 import com.eddie.movie_online_biz.userInfo.service.UserInfoService;
 import com.eddie.movie_online_infrastructure.mapper.userInfo.UserInfoMapper;
-import com.eddie.movie_online_infrastructure.po.UserInfoPO;
+import com.eddie.movie_online_infrastructure.po.userInfo.UserInfoPO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package com.eddie.movie_online_infrastructure.po;
+package com.eddie.movie_online_infrastructure.po.userInfo;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;

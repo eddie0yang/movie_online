@@ -4,7 +4,7 @@
 <mapper namespace="com.eddie.movie_online_infrastructure.mapper.userInfo.UserInfoMapper">
 
 
-    <select id="queryInfo" resultType="com.eddie.movie_online_infrastructure.po.UserInfoPO">
+    <select id="queryInfo" resultType="com.eddie.movie_online_infrastructure.po.userInfo.UserInfoPO">
         select * from t_user
     </select>
 

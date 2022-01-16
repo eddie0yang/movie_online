@@ -4,7 +4,7 @@ package com.eddie.movie_online_infrastructure.mapper.userInfo;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
-import com.eddie.movie_online_infrastructure.po.UserInfoPO;
+import com.eddie.movie_online_infrastructure.po.userInfo.UserInfoPO;
 
 import java.util.List;
 

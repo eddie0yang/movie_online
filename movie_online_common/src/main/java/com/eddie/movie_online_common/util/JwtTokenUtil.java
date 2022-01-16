@@ -1,4 +1,4 @@
-package com.test.demo02_springsecurity.util;
+package com.eddie.movie_online_common.util;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
