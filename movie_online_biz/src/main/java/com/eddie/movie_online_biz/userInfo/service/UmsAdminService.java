@@ -1,7 +1,7 @@
 package com.eddie.movie_online_biz.userInfo.service;
 
-import com.eddie.movie_online_biz.dto.userInfo.UmsAdminDTO;
-import com.eddie.movie_online_biz.dto.userInfo.UmsPermissionDTO;
+import com.eddie.movie_online_biz.dto.userInfo.UmsAdminModel;
+import com.eddie.movie_online_biz.dto.userInfo.UmsPermissionModel;
 
 import java.util.List;
 
@@ -22,15 +22,15 @@ public interface UmsAdminService {
     /**
      * 根据用户名获取后台管理员
      */
-    UmsAdminDTO getAdminByUsername(String username);
+    UmsAdminModel getAdminByUsername(String username);
 
     /**
      * 获取用户所有权限（包括角色权限和+-权限）
      */
-    List<UmsPermissionDTO> getPermissionList(Long adminId);
+    List<UmsPermissionModel> getPermissionList(Long adminId);
 
     /**
      * 注册功能
      */
-    UmsAdminDTO register(UmsAdminDTO umsAdminParam);
+    UmsAdminModel register(UmsAdminModel umsAdminParam);
 }

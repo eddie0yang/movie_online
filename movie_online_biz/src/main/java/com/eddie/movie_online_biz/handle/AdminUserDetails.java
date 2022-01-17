@@ -1,7 +1,7 @@
 package com.eddie.movie_online_biz.handle;
 
-import com.eddie.movie_online_biz.dto.userInfo.UmsAdminDTO;
-import com.eddie.movie_online_biz.dto.userInfo.UmsPermissionDTO;
+import com.eddie.movie_online_biz.dto.userInfo.UmsAdminModel;
+import com.eddie.movie_online_biz.dto.userInfo.UmsPermissionModel;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -16,11 +16,11 @@ import java.util.stream.Collectors;
  */
 public class AdminUserDetails implements UserDetails {
 
-    private UmsAdminDTO umsAdmin;
+    private UmsAdminModel umsAdmin;
 
-    private List<UmsPermissionDTO> permissionList;
+    private List<UmsPermissionModel> permissionList;
 
-    public AdminUserDetails(UmsAdminDTO umsAdmin, List<UmsPermissionDTO> permissionList) {
+    public AdminUserDetails(UmsAdminModel umsAdmin, List<UmsPermissionModel> permissionList) {
         this.umsAdmin = umsAdmin;
         this.permissionList = permissionList;
     }

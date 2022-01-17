@@ -1,8 +1,8 @@
 package com.eddie.movie_online_biz.userInfo.service.impl;
 
 
-import com.eddie.movie_online_biz.dto.userInfo.UmsAdminDTO;
-import com.eddie.movie_online_biz.dto.userInfo.UmsPermissionDTO;
+import com.eddie.movie_online_biz.dto.userInfo.UmsAdminModel;
+import com.eddie.movie_online_biz.dto.userInfo.UmsPermissionModel;
 import com.eddie.movie_online_biz.userInfo.service.UmsAdminService;
 import com.eddie.movie_online_common.util.JwtTokenUtil;
 import com.eddie.movie_online_infrastructure.mapper.userInfo.UmsAdminMapper;
@@ -67,13 +67,13 @@ public class UmsAdminServiceImpl implements UmsAdminService {
     }
 
    @Override
-    public UmsAdminDTO getAdminByUsername(String username) {
+    public UmsAdminModel getAdminByUsername(String username) {
         UmsAdminExample example = new UmsAdminExample();
         example.createCriteria().andUsernameEqualTo(username);
         List<UmsAdminPO> adminList = adminMapper.selectByExample(example);
         if (adminList != null && adminList.size() > 0) {
             UmsAdminPO umsAdminPO = adminList.get(0);
-            UmsAdminDTO umsAdminModel = new UmsAdminDTO();
+            UmsAdminModel umsAdminModel = new UmsAdminModel();
             BeanUtils.copyProperties(umsAdminPO,umsAdminModel);
             return umsAdminModel;
         }
@@ -81,9 +81,9 @@ public class UmsAdminServiceImpl implements UmsAdminService {
     }
 
     @Override
-    public UmsAdminDTO register(UmsAdminDTO umsAdminParam) {
+    public UmsAdminModel register(UmsAdminModel umsAdminModel) {
         UmsAdminPO umsAdminPO = new UmsAdminPO();
-        BeanUtils.copyProperties(umsAdminParam, umsAdminPO);
+        BeanUtils.copyProperties(umsAdminModel, umsAdminPO);
         umsAdminPO.setCreateTime(new Date());
         umsAdminPO.setStatus(1);
         //查询是否有相同用户名的用户
@@ -97,22 +97,20 @@ public class UmsAdminServiceImpl implements UmsAdminService {
         String encodePassword = passwordEncoder.encode(umsAdminPO.getPassword());
         umsAdminPO.setPassword(encodePassword);
         adminMapper.insert(umsAdminPO);
-        UmsAdminDTO umsAdminDTO = new UmsAdminDTO();
-        BeanUtils.copyProperties(umsAdminPO,umsAdminDTO);
-        return umsAdminDTO;
+        UmsAdminModel umsAdminModel2 = new UmsAdminModel();
+        BeanUtils.copyProperties(umsAdminPO,umsAdminModel2);
+        return umsAdminModel2;
     }
 
     @Override
-    public List<UmsPermissionDTO> getPermissionList(Long adminId) {
+    public List<UmsPermissionModel> getPermissionList(Long adminId) {
         List<UmsPermissionPO> permissionList = adminRoleRelationDao.getPermissionList(adminId);
-        List<UmsPermissionDTO> list = new ArrayList<>();
+        List<UmsPermissionModel> list = new ArrayList<>();
         for (UmsPermissionPO umsPermissionPO : permissionList) {
-            UmsPermissionDTO umsPermission = new UmsPermissionDTO();
+            UmsPermissionModel umsPermission = new UmsPermissionModel();
             BeanUtils.copyProperties(umsPermissionPO,umsPermission);
             list.add(umsPermission);
         }
         return list;
     }
-
-
 }

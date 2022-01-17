@@ -1,8 +1,8 @@
 package com.eddie.movie_online_biz.config;
 
 
-import com.eddie.movie_online_biz.dto.userInfo.UmsAdminDTO;
-import com.eddie.movie_online_biz.dto.userInfo.UmsPermissionDTO;
+import com.eddie.movie_online_biz.dto.userInfo.UmsAdminModel;
+import com.eddie.movie_online_biz.dto.userInfo.UmsPermissionModel;
 import com.eddie.movie_online_biz.handle.AdminUserDetails;
 import com.eddie.movie_online_biz.handle.RestAuthenticationEntryPoint;
 import com.eddie.movie_online_biz.handle.RestfulAccessDeniedHandler;
@@ -99,9 +99,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return new UserDetailsService() {
             @Override
             public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-                UmsAdminDTO admin = adminService.getAdminByUsername(username);
+                UmsAdminModel admin = adminService.getAdminByUsername(username);
                 if (admin != null) {
-                    List<UmsPermissionDTO> permissionList = adminService.getPermissionList(admin.getId());
+                    List<UmsPermissionModel> permissionList = adminService.getPermissionList(admin.getId());
                     return new AdminUserDetails(admin, permissionList);
                 }
                 throw new UsernameNotFoundException("用户名或密码错误");

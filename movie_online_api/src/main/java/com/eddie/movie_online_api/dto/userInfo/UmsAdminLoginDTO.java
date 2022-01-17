@@ -1,4 +1,4 @@
-package com.eddie.movie_online_biz.dto.userInfo;
+package com.eddie.movie_online_api.dto.userInfo;
 
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;

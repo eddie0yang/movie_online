@@ -1,17 +1,21 @@
 package com.eddie.movie_online_manager.controller.userInfo;
 
-import com.eddie.movie_online_biz.dto.userInfo.UmsAdminDTO;
-import com.eddie.movie_online_biz.dto.userInfo.UmsAdminLoginDTO;
-import com.eddie.movie_online_biz.dto.userInfo.UmsPermissionDTO;
+import com.eddie.movie_online_api.dto.userInfo.UmsAdminDTO;
+import com.eddie.movie_online_api.dto.userInfo.UmsAdminLoginDTO;
+import com.eddie.movie_online_api.dto.userInfo.UmsPermissionDTO;
+import com.eddie.movie_online_biz.dto.userInfo.UmsAdminModel;
+import com.eddie.movie_online_biz.dto.userInfo.UmsPermissionModel;
 import com.eddie.movie_online_biz.userInfo.service.UmsAdminService;
 import com.eddie.movie_online_common.util.CommonResult;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -51,18 +55,28 @@ public class UmsAdminController {
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     @ResponseBody
     public CommonResult<UmsAdminDTO> register(@RequestBody UmsAdminDTO umsAdminDTO) {
-        UmsAdminDTO umsAdmin = adminService.register(umsAdminDTO);
+        UmsAdminModel umsAdminModel = new UmsAdminModel();
+        BeanUtils.copyProperties(umsAdminDTO,umsAdminModel);
+        UmsAdminModel umsAdmin = adminService.register(umsAdminModel);
         if (umsAdmin == null) {
             CommonResult.failed();
         }
-        return CommonResult.success(umsAdmin);
+        UmsAdminDTO umsAdminDTO2 = new UmsAdminDTO();
+        BeanUtils.copyProperties(umsAdminModel,umsAdminDTO2);
+        return CommonResult.success(umsAdminDTO2);
     }
 
     @ApiOperation("获取用户所有权限（包括+-权限）")
     @RequestMapping(value = "/permission/{adminId}", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<List<UmsPermissionDTO>> getPermissionList(@PathVariable Long adminId) {
-        List<UmsPermissionDTO> permissionList = adminService.getPermissionList(adminId);
-        return CommonResult.success(permissionList);
+        List<UmsPermissionModel> permissionList = adminService.getPermissionList(adminId);
+        List<UmsPermissionDTO> list = new ArrayList<>();
+        for (UmsPermissionModel umsPermissionModel : permissionList) {
+            UmsPermissionDTO umsPermissionDTO = new UmsPermissionDTO();
+            BeanUtils.copyProperties(umsPermissionModel,umsPermissionDTO);
+            list.add(umsPermissionDTO);
+        }
+        return CommonResult.success(list);
     }
 }
