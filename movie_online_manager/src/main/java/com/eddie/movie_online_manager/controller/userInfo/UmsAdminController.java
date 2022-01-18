@@ -71,6 +71,7 @@ public class UmsAdminController {
     @ResponseBody
     public CommonResult<List<UmsPermissionDTO>> getPermissionList(@PathVariable Long adminId) {
         List<UmsPermissionModel> permissionList = adminService.getPermissionList(adminId);
+
         List<UmsPermissionDTO> list = new ArrayList<>();
         for (UmsPermissionModel umsPermissionModel : permissionList) {
             UmsPermissionDTO umsPermissionDTO = new UmsPermissionDTO();
