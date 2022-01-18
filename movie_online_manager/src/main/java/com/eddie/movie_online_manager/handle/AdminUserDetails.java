@@ -1,7 +1,7 @@
 package com.eddie.movie_online_manager.handle;
 
-import com.eddie.movie_online_biz.dto.userInfo.UmsAdminModel;
-import com.eddie.movie_online_biz.dto.userInfo.UmsPermissionModel;
+import com.eddie.movie_online_biz.model.userInfo.UmsAdminModel;
+import com.eddie.movie_online_biz.model.userInfo.UmsPermissionModel;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

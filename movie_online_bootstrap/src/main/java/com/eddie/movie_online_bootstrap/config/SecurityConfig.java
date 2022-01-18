@@ -1,8 +1,8 @@
 package com.eddie.movie_online_bootstrap.config;
 
 
-import com.eddie.movie_online_biz.dto.userInfo.UmsAdminModel;
-import com.eddie.movie_online_biz.dto.userInfo.UmsPermissionModel;
+import com.eddie.movie_online_biz.model.userInfo.UmsAdminModel;
+import com.eddie.movie_online_biz.model.userInfo.UmsPermissionModel;
 import com.eddie.movie_online_biz.userInfo.service.UmsAdminService;
 import com.eddie.movie_online_common.filter.JwtAuthenticationTokenFilter;
 import com.eddie.movie_online_manager.handle.AdminUserDetails;

@@ -22,8 +22,7 @@ docker部署√
 查docker容器日志：
 idea一键docker√
 6.Redis
-7.入口：登录页面 - Oauth2 + SSO,考虑到每次请求都需要令牌，太繁琐，换Spring Security
-Spring Security + JWT
+7.入口：登录页面:Spring Security + JWT
 8.sl4j
 
 

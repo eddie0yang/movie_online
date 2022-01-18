@@ -1,7 +1,7 @@
 package com.eddie.movie_online_biz.userInfo.service;
 
-import com.eddie.movie_online_biz.dto.userInfo.UmsAdminModel;
-import com.eddie.movie_online_biz.dto.userInfo.UmsPermissionModel;
+import com.eddie.movie_online_biz.model.userInfo.UmsAdminModel;
+import com.eddie.movie_online_biz.model.userInfo.UmsPermissionModel;
 
 import java.util.List;
 

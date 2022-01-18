@@ -3,8 +3,8 @@ package com.eddie.movie_online_manager.controller.userInfo;
 import com.eddie.movie_online_api.dto.userInfo.UmsAdminDTO;
 import com.eddie.movie_online_api.dto.userInfo.UmsAdminLoginDTO;
 import com.eddie.movie_online_api.dto.userInfo.UmsPermissionDTO;
-import com.eddie.movie_online_biz.dto.userInfo.UmsAdminModel;
-import com.eddie.movie_online_biz.dto.userInfo.UmsPermissionModel;
+import com.eddie.movie_online_biz.model.userInfo.UmsAdminModel;
+import com.eddie.movie_online_biz.model.userInfo.UmsPermissionModel;
 import com.eddie.movie_online_biz.userInfo.service.UmsAdminService;
 import com.eddie.movie_online_common.util.CommonResult;
 import io.swagger.annotations.Api;
@@ -14,7 +14,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;

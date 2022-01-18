@@ -23,7 +23,6 @@
             <artifactId>movie_online_manager</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
-
     </dependencies>
 
     <build>
