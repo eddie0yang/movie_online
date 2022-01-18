@@ -1,4 +1,4 @@
-package com.eddie.movie_online_biz.handle;
+package com.eddie.movie_online_manager.handle;
 
 import com.eddie.movie_online_biz.dto.userInfo.UmsAdminModel;
 import com.eddie.movie_online_biz.dto.userInfo.UmsPermissionModel;

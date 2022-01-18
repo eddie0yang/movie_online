@@ -1,4 +1,4 @@
-package com.eddie.movie_online_biz.handle;
+package com.eddie.movie_online_manager.handle;
 
 import cn.hutool.json.JSONUtil;
 import com.eddie.movie_online_common.util.CommonResult;

@@ -1,4 +1,4 @@
-package com.eddie.movie_online_common.config;
+package com.eddie.movie_online_bootstrap.config;
 
 
 import com.baomidou.mybatisplus.annotation.DbType;

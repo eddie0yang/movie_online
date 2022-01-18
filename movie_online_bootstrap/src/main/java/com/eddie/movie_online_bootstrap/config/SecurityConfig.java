@@ -1,13 +1,13 @@
-package com.eddie.movie_online_biz.config;
+package com.eddie.movie_online_bootstrap.config;
 
 
 import com.eddie.movie_online_biz.dto.userInfo.UmsAdminModel;
 import com.eddie.movie_online_biz.dto.userInfo.UmsPermissionModel;
-import com.eddie.movie_online_biz.handle.AdminUserDetails;
-import com.eddie.movie_online_biz.handle.RestAuthenticationEntryPoint;
-import com.eddie.movie_online_biz.handle.RestfulAccessDeniedHandler;
 import com.eddie.movie_online_biz.userInfo.service.UmsAdminService;
 import com.eddie.movie_online_common.filter.JwtAuthenticationTokenFilter;
+import com.eddie.movie_online_manager.handle.AdminUserDetails;
+import com.eddie.movie_online_manager.handle.RestAuthenticationEntryPoint;
+import com.eddie.movie_online_manager.handle.RestfulAccessDeniedHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
