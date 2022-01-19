@@ -35,6 +35,14 @@ apollo
 
 vue
 
+端口号：
+movie_online:8080
+eureka_security_server:8001
+
+test:
+oauth2:9401
+spring.security:9402
+ribbon:9403
 
 
 

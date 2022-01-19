@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * 后台管理员Service
- * Created by eddie on 2022/01/16
+ * Created by Mr.Yang on 2022/01/16
  */
 public interface UmsAdminService {
 

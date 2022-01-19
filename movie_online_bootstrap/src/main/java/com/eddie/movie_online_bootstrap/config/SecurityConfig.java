@@ -28,10 +28,9 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 import java.util.List;
 
-
 /**
  * SpringSecurity的配置
- * Created by eddie on 2022/01/16
+ * Created by Mr.Yang on 2022/01/16
  */
 @Configuration
 @EnableWebSecurity

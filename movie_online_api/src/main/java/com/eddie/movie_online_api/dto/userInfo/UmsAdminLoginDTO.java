@@ -7,7 +7,7 @@ import javax.validation.constraints.NotEmpty;
 
 /**
  * 用户登录参数
- * Created by eddie on 2022/01/16
+ * Created by Mr.Yang on 2022/01/16
  */
 @Data
 public class UmsAdminLoginDTO {
