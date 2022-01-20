@@ -3,6 +3,7 @@ package com.eddie.movie_online_biz.userInfo.service.impl;
 import com.eddie.movie_online_biz.userInfo.service.UserInfoService;
 import com.eddie.movie_online_infrastructure.mapper.userInfo.UserInfoMapper;
 import com.eddie.movie_online_infrastructure.po.userInfo.UserInfoPO;
+import com.eddie.movie_online_infrastructure.sao.FeignTestSao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +14,8 @@ public class UserInfoServiceImpl implements UserInfoService {
 
     @Autowired
     private UserInfoMapper userInfoMapper;
+    @Autowired
+    private FeignTestSao feignTestSao;
 
     @Override
     public void queryInfo() {
@@ -27,5 +30,10 @@ public class UserInfoServiceImpl implements UserInfoService {
         //mybatis plus + lambda
         List<UserInfoPO> userInfoPOS1 = userInfoMapper.queryInfoByMyself(1);
         System.out.println("3"+userInfoPOS1);
+    }
+
+    @Override
+    public String testFeign() {
+        return feignTestSao.testFeign(123);
     }
 }

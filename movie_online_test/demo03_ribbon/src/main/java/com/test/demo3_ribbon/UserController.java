@@ -14,4 +14,10 @@ public class UserController {
         System.out.println("测试连接成功！");
         return "测试连接成功"+id;
     }
+
+    @GetMapping("/getUser2")
+    public String getUser2(int id) {
+        System.out.println("测试连接成功！");
+        return "测试连接成功"+id;
+    }
 }

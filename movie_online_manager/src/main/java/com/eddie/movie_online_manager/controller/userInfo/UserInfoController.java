@@ -33,8 +33,14 @@ public class UserInfoController {
     }
 
     @GetMapping(value = "/testRibbon")
-    @ApiOperation("测试用例2")
+    @ApiOperation("测试Ribbon-负载均衡")
     public String testRibbon(){
         return restTemplate.getForObject("http://ribbon-test/ribbonTest/123", String.class,"");
+    }
+
+    @GetMapping(value = "/testFeign")
+    @ApiOperation("测试testFeign")
+    public String testFeign(){
+        return userInfoService.testFeign();
     }
 }
